@@ -4,12 +4,12 @@
 
 ## Install
 ```
-$ npm i dmkbn@terminal-ui
+$ npm i @dmkbn/terminal-ui
 ```
 
 ## Usage
 ```js
-import terminal from 'dmkbn@terminal-ui'
+import terminal from '@dmkbn/terminal-ui'
 
 function examplePage() {
   terminal.command('e', 'Exit', () => {
