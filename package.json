@@ -1,6 +1,6 @@
 {
   "name": "@dmkbn/terminal-ui",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "A simple framework for creating terminal apps with keyboard control.",
   "type": "module",
   "main": "terminal.js",
