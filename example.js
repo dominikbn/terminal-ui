@@ -13,8 +13,8 @@ function example() {
     else iColor = 0
   })
 
-  terminal.command('s', 'Subpage', () => {
-    terminal.goTo('subpage')
+  terminal.command('a', 'Aquarium', () => {
+    terminal.goTo('aquarium')
   })
 
   terminal.command('x', 'Exit', () => {
@@ -27,18 +27,31 @@ function example() {
 }
 
 
-function subpage() {
-  terminal.command('b', 'Back to menu', () => {
+function aquarium() {
+  const fish = { left: '<°)))><', right: '><(((°>' }
+  let direction = 'right'
+  let distance = ' '.repeat(9)
+
+  terminal.command('a', 'Swim Left', () => {
+    direction = 'left'
+    distance = distance.slice(0, -1)
+  })
+
+  terminal.command('d', 'Swim Right', () => {
+    if (distance.length >= 50) return
+    direction = 'right'
+    distance += ' '
+  })
+
+  terminal.command('b', 'Back', () => {
     terminal.goTo('example')
   })
 
-  terminal.menu(false)
-
   terminal.render(() => {
-    return `This is a subpage.\nMenu bar is disabled.\n\n[b] Back to example page`
+    return `\n${distance}${fish[direction]}`
   })
 }
 
 
-terminal.initPages([example, subpage])
+terminal.initPages([example, aquarium])
 terminal.run()
